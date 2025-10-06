@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4734825545000379530}
   - component: {fileID: 6833753994768045082}
   - component: {fileID: 5081383877975579352}
-  - component: {fileID: 1901536257504388340}
   - component: {fileID: 2839843660561162156}
-  m_Layer: 0
-  m_Name: enemy
-  m_TagString: Untagged
+  - component: {fileID: -7896179230068769629}
+  - component: {fileID: 3931003038296466491}
+  m_Layer: 6
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,8 +89,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1901536257504388340
-CapsuleCollider:
+--- !u!114 &2839843660561162156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842714161395335799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e551adbe6294534b873c32f8600a767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  fixedY: 1
+--- !u!114 &-7896179230068769629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842714161395335799}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35167101b0f2f2f43a183cc4f873ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3931003038296466491
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,22 +133,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2839843660561162156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4842714161395335799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e551adbe6294534b873c32f8600a767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  fixedY: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0433629, y: 2.0000005, z: 2}
+  m_Center: {x: -0.02168119, y: 0, z: 0}
