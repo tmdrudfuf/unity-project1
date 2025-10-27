@@ -1,3 +1,4 @@
+// Assets/Scripts/Systems/SceneLoader.cs
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +8,6 @@ public static class SceneLoader
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
-    }
-
-    public static void LoadByIndex(int buildIndex)
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(buildIndex);
     }
 
     public static void LoadNext()
@@ -32,10 +27,10 @@ public static class SceneLoader
     public static void Quit()
     {
         Time.timeScale = 1f;
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+    #else
         Application.Quit();
-#endif
+    #endif
     }
 }

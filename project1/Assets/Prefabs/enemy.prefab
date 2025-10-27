@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fill: {fileID: 7031107610328310412}
-  hideWhenFull: 0
+  hideWhenFull: 1
   target: {fileID: 0}
   worldOffset: {x: 0, y: 0, z: -0.4}
   cam: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 5081383877975579352}
   - component: {fileID: 2839843660561162156}
   - component: {fileID: 3931003038296466491}
-  - component: {fileID: 4112656587338101026}
+  - component: {fileID: 2268020684728484896}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -227,7 +227,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 1.27}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6291827649824879431}
@@ -264,7 +264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9875a245ac49007498213638a307faa1, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -319,9 +319,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0433629, y: 2.0000005, z: 2}
-  m_Center: {x: -0.02168119, y: 0, z: 0}
---- !u!114 &4112656587338101026
+  m_Size: {x: 1.0433629, y: 5.7578416, z: 1.2064278}
+  m_Center: {x: -0.02168119, y: 0.01645555, z: 0.06356145}
+--- !u!114 &2268020684728484896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,6 +337,25 @@ MonoBehaviour:
   scoreOnKill: 100
   briefInvincible: 1
   invincibleSeconds: 0.05
+  deathVfxPrefab: {fileID: 0}
+  destroyDelay: 0
+  hitClips:
+  - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  hitVolMin: 0.502
+  hitVolMax: 0.539
+  hitPitchMin: 0.95
+  hitPitchMax: 1.05
+  hitSfxCooldown: 0.01
+  deathClips:
+  - {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
+  deathVolMin: 0.217
+  deathVolMax: 0.312
+  deathPitchMin: 0.95
+  deathPitchMax: 1.05
+  spatialBlend: 0
+  minDistance: 1
+  maxDistance: 50
+  outputMixerGroup: {fileID: 0}
 --- !u!1 &9155426527864569469
 GameObject:
   m_ObjectHideFlags: 0

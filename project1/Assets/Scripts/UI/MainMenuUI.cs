@@ -1,3 +1,4 @@
+// Assets/Scripts/UI/MainMenuUI.cs
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,32 +11,28 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button quitButton;
 
     [Header("Options")]
-    [Tooltip("시작 시 로드할 게임 씬 이름 (비워두면 BuildIndex+1 로드)")]
+    [Tooltip("비워두면 BuildIndex+1 로드")]
     [SerializeField] private string gameSceneName = "";
 
     [Header("Press Any Key 모드")]
     [SerializeField] private bool enablePressAnyKey = false;
     [SerializeField] private TextMeshProUGUI pressAnyKeyText;
 
-    private bool canStart;
+    private bool waitingAnyKey;
 
     private void Awake()
     {
-        Time.timeScale = 1f; // 메뉴 진입 시 항상 정상 속도
+        Time.timeScale = 1f;
+
         if (startButton) startButton.onClick.AddListener(StartGame);
         if (quitButton)  quitButton.onClick.AddListener(SceneLoader.Quit);
 
         if (enablePressAnyKey)
         {
-            if (pressAnyKeyText)
-            {
-                pressAnyKeyText.gameObject.SetActive(true);
-                // 깜빡임 효과(간단)
-                pressAnyKeyText.alpha = 1f;
-            }
+            waitingAnyKey = true;
+            if (pressAnyKeyText) pressAnyKeyText.gameObject.SetActive(true);
             if (startButton) startButton.gameObject.SetActive(false);
             if (quitButton)  quitButton.gameObject.SetActive(false);
-            canStart = true;
         }
         else
         {
@@ -45,16 +42,14 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if (!enablePressAnyKey || !canStart) return;
+        if (!enablePressAnyKey || !waitingAnyKey) return;
 
-        // 키/클릭/터치 아무 거나
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            canStart = false;
+            waitingAnyKey = false;
             StartGame();
         }
 
-        // 텍스트 깜빡임(선택)
         if (pressAnyKeyText)
         {
             float a = 0.5f + 0.5f * Mathf.Sin(Time.unscaledTime * 3f);
