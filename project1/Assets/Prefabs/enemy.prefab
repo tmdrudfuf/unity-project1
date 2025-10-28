@@ -337,7 +337,7 @@ MonoBehaviour:
   scoreOnKill: 100
   briefInvincible: 1
   invincibleSeconds: 0.05
-  deathVfxPrefab: {fileID: 0}
+  deathVfxPrefab: {fileID: 4114991363664749535, guid: e635607617ac67e4c90d2ef3cbee042c, type: 3}
   destroyDelay: 0
   hitClips:
   - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
